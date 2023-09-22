@@ -44,11 +44,11 @@ tag_dot[cpt].classList.add('dot_selected')
 arrow_left.onclick = function () {
     cpt--
     if (cpt < 0) {
-        cpt = 3
+        cpt = slides.length - 1
         tag_caroussel.src = './assets/images/slideshow/' + slides[cpt].image
         tag_tagLine.innerHTML = slides[cpt].tagLine
         tag_dot[cpt].classList.add('dot_selected')
-        tag_dot[cpt - 3].classList.remove('dot_selected')
+        tag_dot[cpt - (slides.length - 1)].classList.remove('dot_selected')
     } else {
         tag_caroussel.src = './assets/images/slideshow/' + slides[cpt].image
         tag_tagLine.innerHTML = slides[cpt].tagLine
@@ -59,12 +59,12 @@ arrow_left.onclick = function () {
 
 arrow_right.onclick = function () {
     cpt++
-    if (cpt > 3) {
+    if (cpt > slides.length - 1) {
         cpt = 0
         tag_caroussel.src = './assets/images/slideshow/' + slides[cpt].image
         tag_tagLine.innerHTML = slides[cpt].tagLine
         tag_dot[cpt].classList.add('dot_selected')
-        tag_dot[cpt + 3].classList.remove('dot_selected')
+        tag_dot[cpt + (slides.length - 1)].classList.remove('dot_selected')
     } else {
         tag_caroussel.src = './assets/images/slideshow/' + slides[cpt].image
         tag_tagLine.innerHTML = slides[cpt].tagLine
